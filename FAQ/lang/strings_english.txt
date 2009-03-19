@@ -1,0 +1,24 @@
+<?php
+$s_menu_faq_link = "FAQ";
+$s_add_faq = "Add a new FAQ";
+$s_add_faq_title = "New FAQ";
+$s_post_faq_button = "Post FAQ";
+$s_question = "Question";
+$s_answere = "Answer";
+$s_delete_faq_sure_msg = "Are you sure you wish to delete this FAQ item? ";
+$s_delete_faq_item_button = "Delete FAQ item";
+$s_edit_faq_title = "Edit FAQ";
+$s_update_faq_button = "Update FAQ";
+$s_import_faq = "Promote to FAQ";
+$s_search_string = "Search whole String";
+// config section
+$s_plugin_format_title = "Mantis FAQ" ;
+$s_plugin_format_config = "Configuration" ;
+$s_plugin_format_promote_text = "Promote Issue to FAQ" ;
+$s_plugin_format_enabled = "On";
+$s_plugin_format_disabled = "Off";
+$s_plugin_format_project_text = "Store FAQ project related" ;
+$s_plugin_format_threshold_text = "Threshold to promote to FAQ" ;
+$s_faq_view_check = "Use Minimum level for viewing FAQ" ;
+$s_faq_view_threshold = "Minimum level for viewing FAQ" ;
+$s_faq_view_window = "Present FAQ's in new window" ;
