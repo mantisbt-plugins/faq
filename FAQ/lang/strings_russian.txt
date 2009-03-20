@@ -1,5 +1,5 @@
 <?php
-$s_menu_faq_link = "FAQ";
+$s_menu_faq_link = "faq";
 $s_add_faq = "Добавить новое в FAQ";
 $s_add_faq_title = "Новый FAQ";
 $s_post_faq_button = "Отправить в FAQ";
@@ -11,14 +11,15 @@ $s_edit_faq_title = "Изменить FAQ";
 $s_update_faq_button = "Обновить FAQ";
 $s_import_faq = "Импортировать FAQ";
 $s_search_string = "Искать по целой строке";
+$s_close_window = "Закрыть окно";
 // config section
 $s_plugin_format_title = "MantisBT FAQ Плагин" ;
 $s_plugin_format_config = "Настройки" ;
+$s_plugin_format_project_text = "Хранить FAQ в разрезе проектов" ;
+$s_faq_view_window = "Просмотр FAQ в новом окне" ;
 $s_plugin_format_promote_text = "Импортировать вопросы в FAQ" ;
+$s_faq_view_check = "Проверять уровень для просмотра" ;
+$s_faq_view_threshold = "Минимальный уровень для просмотра FAQ" ;
+$s_plugin_format_threshold_text = "Минимальный уровень для изменения FAQ" ;
 $s_plugin_format_enabled = "Вкл";
 $s_plugin_format_disabled = "Выкл";
-$s_plugin_format_project_text = "Хранить FAQ в разрезе проектов" ;
-$s_plugin_format_threshold_text = "Минимальный доступ в FAQ" ;
-$s_faq_view_check = "Минимальный уровень для испорта в FAQ" ;
-$s_faq_view_threshold = "Минимальный уровень для просмотра FAQ" ;
-$s_faq_view_window = "Просмотр FAQ в новом окне" ;

@@ -11,6 +11,7 @@ $s_edit_faq_title = "Edit FAQ";
 $s_update_faq_button = "Update FAQ";
 $s_import_faq = "Promote to FAQ";
 $s_search_string = "Search whole String";
+$s_close_window = "Close Window";
 // config section
 $s_plugin_format_title = "Mantis FAQ" ;
 $s_plugin_format_config = "Configuration" ;

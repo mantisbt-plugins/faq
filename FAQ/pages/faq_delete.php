@@ -18,7 +18,7 @@ if ( $result ) {
 }
 	  if (ON == plugin_config_get('faq_view_window') ){
 	?>
-	<a href="javascript:window.opener='x';window.close();">Close Window</a>
+	<a href="javascript:window.opener='x';window.close();"><?php echo lang_get( 'close_window' );?></a>
 <?PHP
 	
 	  } else {
