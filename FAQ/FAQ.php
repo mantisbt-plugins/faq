@@ -4,7 +4,7 @@ class FAQPlugin extends MantisPlugin {
 	function register() {
 		$this->name        = 'FAQ';
 		$this->description = 'Adds Frequently Asked Questions to your Mantis installation.';
-		$this->version     = '0.95';
+		$this->version     = '0.95.1';
 		$this->requires    = array('MantisCore'       => '1.2.0',);
 		$this->author      = 'Cas Nuy / based upon scripts from pbia@engineer.com';
 		$this->contact     = 'Cas-at-nuy.info';
@@ -68,11 +68,15 @@ class FAQPlugin extends MantisPlugin {
 				$import_page .= $proj_id;
 		
 				if (ON == plugin_config_get('faq_view_check') ){
-					return array( lang_get( 'import_faq' )=>plugin_page( $import_page ). '" target=_new>' );	
+					return array( lang_get( 'import_faq' )=>plugin_page( $import_page ). '" target="_new' );	
 				} else {
 					return array( lang_get( 'import_faq' )=>plugin_page( $import_page ) );	
 
 				}
+			}
+			else
+			{
+				return array( );
 			}
 		}
     }

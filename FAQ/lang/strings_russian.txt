@@ -19,6 +19,6 @@ $s_plugin_format_enabled = "Вкл";
 $s_plugin_format_disabled = "Выкл";
 $s_plugin_format_project_text = "Хранить FAQ в разрезе проектов" ;
 $s_plugin_format_threshold_text = "Минимальный доступ в FAQ" ;
-$s_faq_view_check = "У Вас нет прав для просмотра FAQ" ;
+$s_faq_view_check = "Минимальный уровень для испорта в FAQ" ;
 $s_faq_view_threshold = "Минимальный уровень для просмотра FAQ" ;
 $s_faq_view_window = "Просмотр FAQ в новом окне" ;
