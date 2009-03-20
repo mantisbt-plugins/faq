@@ -4,9 +4,16 @@ require( "css_faq.php" ) ;
 html_page_top1();
 // html_page_top2() ;
 
-$f_question	  = gpc_get_string( 'question' );
-$f_answere	  = gpc_get_string( 'answere' );
+
 $f_project_id = gpc_get_string( 'project_id' );
+$f_bug_id = gpc_get_string( 'bugid' );
+	$t_bug_p = bug_prepare_display( bug_get( $f_bug_id, true ) );
+$f_answere  = urlencode($t_bug_p->description) ;
+$f_answere .= " " ;
+$f_answere .= urlencode($t_bug_p->additional_information) ;
+$f_question  = category_full_name( $t_bug_p->category_id ) ;
+$f_question .= " -> " ;
+$f_question  .= urlencode($t_bug_p->summary) ;
 ?>
 
 <?php # Add faq Form BEGIN ?>
