@@ -32,21 +32,21 @@ html_page_top2() ;
 
 			$f_search=trim($f_search); 
 			$what = " ";
-			$pos = strpos($f_search, $what);
+			$pos = utf8_strpos($f_search, $what);
 			
 			if (($pos === false) or (isset( $search_string ))){
 				$t_where_clausole = $t_where_clausole . " ( (question LIKE '%".addslashes($f_search)."%')
 					OR (answere LIKE '%".addslashes($f_search)."%') ) ";
 			} else {
-				$pos1 = strpos($f_search, $what, $pos+1);
+				$pos1 = utf8_strpos($f_search, $what, $pos+1);
 				if ($pos1 === false) {
-					$f_search2 = substr($f_search, $pos); 
+					$f_search2 = utf8_substr($f_search, $pos); 
 				
 				} else {
 					$len1=$pos1-$pos;
-					$f_search2 = substr($f_search, $pos1,$len1);    
+					$f_search2 = utf8_substr($f_search, $pos1,$len1);    
 				}
-				$f_search3 = substr($f_search,0, $pos); 
+				$f_search3 = utf8_substr($f_search,0, $pos); 
 				$f_search3=trim($f_search3); 
 				$f_search2=trim($f_search2); 
 				$t_where_clausole = $t_where_clausole . " ((question LIKE '%".addslashes($f_search3)."%') and (question LIKE '%".addslashes($f_search2)."%'))
@@ -147,7 +147,7 @@ html_page_top2() ;
         $t_project_name = "Sitewide";
 		if( $v_project_id != 0 )
     		$t_project_name = project_get_field( $v_project_id, "name" );
-		$v_answere = trim(substr($v_answere, 0, 25)) ;
+		$v_answere = trim(utf8_substr($v_answere, 0, 25)) ;
 		$v_answere .=".............";
 
 		if (ON == plugin_config_get('faq_view_window') ){	

@@ -1,21 +1,22 @@
 <?php
+require_once( config_get_global( 'class_path' ) . 'MantisPlugin.class.php' );
+
 class FAQPlugin extends MantisPlugin {
- 
+
 	function register() {
 		$this->name        = 'FAQ';
 		$this->description = 'Adds Frequently Asked Questions to your Mantis installation.';
-		$this->version     = '0.96';
-		$this->requires    = array('MantisCore'       => '1.2.0',);
+		$this->version     = '0.96.1';
+		$this->requires    = array('MantisCore'       => '1.2.0rc1',);
 		$this->author      = 'Cas Nuy / based upon scripts from pbia@engineer.com';
 		$this->contact     = 'Cas-at-nuy.info';
 		$this->url         = 'http://www.nuy.info';
 		$this->page			= 'config';
 	}
- 
 
- 	/**
-	 * Default plugin configuration.
-	 */
+/**
+ * Default plugin configuration.
+ */ 
 	function config() {
 		return array(
 			'promote_text'		=> ON,
@@ -27,20 +28,27 @@ class FAQPlugin extends MantisPlugin {
 			);
 	}
 
-	function init() { 
-		plugin_event_hook( 'EVENT_MENU_MAIN', 'mainmenu' );
-			plugin_event_hook( 'EVENT_MENU_ISSUE', 'faqmenu' );
+
+/**
+ * Default hooks for main menu and issue menu
+ */
+	function hooks() {
+		return array(
+			'EVENT_MENU_MAIN' => 'main_menu',
+			'EVENT_MENU_ISSUE' => 'faq_menu',
+		);
 	}
 	
-	function mainmenu() {
-		return array('<a href="'. plugin_page( 'faq_menu_page.php' ) . '">' . lang_get( 'menu_faq_link' ) . '</a>' );
-    }
- 
- 	function faqmenu() {
+
+	function main_menu() {
+		return array('<a href="'. plugin_page( 'faq_menu_page' ) . '">' . lang_get( 'menu_faq_link' ) . '</a>' );
+	}
+
+	function faq_menu() {
 		if (ON == plugin_config_get('promote_text') ){
 			$bugid =  gpc_get_int( 'bug_id' );
 			if ( access_has_bug_level( plugin_config_get( 'promote_threshold' ), $bugid ) ){
-				$t_bug_p = bug_prepare_display( bug_get( $bugid, true ) );
+				$t_bug_p = bug_get( $bugid, true );
 				if ( OFF == plugin_config_get( 'project_text')) {
 					$proj_id = 0 ;
 				} else{
@@ -68,9 +76,14 @@ class FAQPlugin extends MantisPlugin {
 				return array( );
 			}
 		}
-    }
- 
- 	function schema() {
+		else
+		{
+			return array ();
+		}
+	}
+
+
+	function schema() {
 		return array(
 			array( 'CreateTableSQL', array( plugin_table( 'results' ), "
 				id				I		NOTNULL UNSIGNED ZEROFILL AUTOINCREMENT PRIMARY,

@@ -15,7 +15,7 @@ if (OFF == plugin_config_get('faq_view_window') ){
 	$f_poster_id  = auth_get_current_user_id();
 
 	$f_bug_id = gpc_get_string( 'bugid' );
-	$t_bug_p = bug_prepare_display( bug_get( $f_bug_id, true ) );
+	$t_bug_p = bug_get( $f_bug_id, true );
 	$f_answere  = urlencode($t_bug_p->description) ;
 	$f_answere .= " " ;
 	$f_answere .= urlencode($t_bug_p->additional_information) ;
