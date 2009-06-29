@@ -6,25 +6,26 @@ class FAQPlugin extends MantisPlugin {
 	function register() {
 		$this->name        = 'FAQ';
 		$this->description = 'Adds Frequently Asked Questions to your Mantis installation.';
-		$this->version     = '0.96.1';
+		$this->version     = '0.96.2';
 		$this->requires    = array('MantisCore'       => '1.2.0rc1',);
 		$this->author      = 'Cas Nuy / based upon scripts from pbia@engineer.com';
 		$this->contact     = 'Cas-at-nuy.info';
 		$this->url         = 'http://www.nuy.info';
-		$this->page			= 'config';
+		$this->page        = 'config';
 	}
+
 
 /**
  * Default plugin configuration.
  */ 
 	function config() {
 		return array(
-			'promote_text'		=> ON,
-			'promote_threshold'	=> 55,
-			'project_text'		=> ON,
-			'faq_view_window'	=> OFF,
-			'faq_view_check'	=> OFF,
-			'faq_view_threshold'=> 10,
+			'promote_text'       => ON,
+			'promote_threshold'  => 55,
+			'project_text'       => ON,
+			'faq_view_window'    => OFF,
+			'faq_view_check'     => OFF,
+			'faq_view_threshold' => 10,
 			);
 	}
 
@@ -40,12 +41,21 @@ class FAQPlugin extends MantisPlugin {
 	}
 	
 
+ /**
+  * Default function generate main menu links
+  * @return array of links
+  */
 	function main_menu() {
-		return array('<a href="'. plugin_page( 'faq_menu_page' ) . '">' . lang_get( 'menu_faq_link' ) . '</a>' );
+		return array('<a href="'. plugin_page( 'faq_menu_page' ) . '">' . plugin_lang_get( 'menu_link' ) . '</a>' );
 	}
 
+
+ /**
+  * Default function generate issue menu links
+  * @return array of links
+  */
 	function faq_menu() {
-		if (ON == plugin_config_get('promote_text') ){
+		if (ON == plugin_config_get( 'promote_text' ) ){
 			$bugid =  gpc_get_int( 'bug_id' );
 			if ( access_has_bug_level( plugin_config_get( 'promote_threshold' ), $bugid ) ){
 				$t_bug_p = bug_get( $bugid, true );
@@ -65,9 +75,9 @@ class FAQPlugin extends MantisPlugin {
 				$import_page .= $proj_id;
 		
 				if (ON == plugin_config_get('faq_view_check') ){
-					return array( lang_get( 'import_faq' )=>plugin_page( $import_page ). '" target="_new' );	
+					return array( plugin_lang_get( 'import_faq' )=>plugin_page( $import_page ). '" target="_new' );	
 				} else {
-					return array( lang_get( 'import_faq' )=>plugin_page( $import_page ) );	
+					return array( plugin_lang_get( 'import_faq' )=>plugin_page( $import_page ) );	
 
 				}
 			}

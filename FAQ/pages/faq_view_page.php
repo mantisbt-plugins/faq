@@ -1,9 +1,9 @@
 <?php
 require( 'faq_api.php' );
 require( 'css_faq.php' );
-html_page_top1();
+html_page_top1( );
 if ( OFF == plugin_config_get( 'faq_view_window' ) ){
-	html_page_top2();
+	html_page_top2( );
 }
 
 $f_id = gpc_get_int( 'f_id' );
