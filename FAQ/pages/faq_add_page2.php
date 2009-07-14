@@ -5,7 +5,7 @@ html_page_top1( );
 // html_page_top2( );
 
 $f_project_id = gpc_get_string( 'project_id' );
-$f_bug_id = gpc_get_string( 'bugid' );
+$f_bug_id = gpc_get_int( 'id' );
 $t_bug_p = bug_get( $f_bug_id, true );
 $f_answere  = urlencode( $t_bug_p->description );
 $f_answere .= " ";

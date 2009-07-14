@@ -12,7 +12,7 @@ access_ensure_project_level( DEVELOPER );
 $f_project_id = gpc_get_string( 'project_id' );
 $f_poster_id = auth_get_current_user_id( );
 
-$f_bug_id = gpc_get_string( 'bugid' );
+$f_bug_id = gpc_get_int( 'id' );
 $t_bug_p = bug_get( $f_bug_id, true );
 $f_answere  = urlencode( $t_bug_p->description );
 $f_answere .= " ";

@@ -6,7 +6,7 @@ class FAQPlugin extends MantisPlugin {
 	function register() {
 		$this->name        = 'FAQ';
 		$this->description = 'Adds Frequently Asked Questions to your Mantis installation.';
-		$this->version     = '0.96.2';
+		$this->version     = '0.96.3';
 		$this->requires    = array('MantisCore'       => '1.2.0rc1',);
 		$this->author      = 'Cas Nuy / based upon scripts from pbia@engineer.com';
 		$this->contact     = 'Cas-at-nuy.info';
@@ -56,7 +56,7 @@ class FAQPlugin extends MantisPlugin {
   */
 	function faq_menu() {
 		if (ON == plugin_config_get( 'promote_text' ) ){
-			$bugid =  gpc_get_int( 'bug_id' );
+			$bugid =  gpc_get_int( 'id' );
 			if ( access_has_bug_level( plugin_config_get( 'promote_threshold' ), $bugid ) ){
 				$t_bug_p = bug_get( $bugid, true );
 				if ( OFF == plugin_config_get( 'project_text')) {
