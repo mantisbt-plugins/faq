@@ -78,7 +78,7 @@ html_page_top2( );
 		<tr>
 			<td class="small-caption">
 				<input type="text" size="25" name="f_search" value="<?php echo $f_search; ?>">
-				<input  type="checkbox" name="search_string" > <?php echo lang_get( 'search_string' ) ?>
+				<input  type="checkbox" name="search_string" > <?php echo plugin_lang_get( 'search_string' ) ?>
 			</td>
 			<td class="right">
 				<input type="submit" name="f_filter" value="<?php echo lang_get( 'filter_button') ?>">
