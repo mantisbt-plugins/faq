@@ -21,11 +21,12 @@ class FAQPlugin extends MantisPlugin {
 	function config() {
 		return array(
 			'promote_text'       => ON,
-			'promote_threshold'  => 55,
+			'promote_threshold'  => DEVELOPER,
 			'project_text'       => ON,
 			'faq_view_window'    => OFF,
 			'faq_view_check'     => OFF,
-			'faq_view_threshold' => 10,
+			'faq_view_threshold' => VIEWER,
+			'faq_update_threshold' => DEVELOPER,
 			);
 	}
 
@@ -69,7 +70,7 @@ class FAQPlugin extends MantisPlugin {
 				} else {
 					$import_page ='faq_add.php';
 				}
-				$import_page .='&bugid=';
+				$import_page .='&id=';
 				$import_page .= $bugid ;
 				$import_page .='&project_id=';
 				$import_page .= $proj_id;

@@ -23,6 +23,7 @@ html_page_top2( );
 		$f_search = "";
 		$f_search3 = "";
 		$f_search2 = "";
+		$pos = false;
 	}
 	else {
 		$f_search3 = "";
@@ -95,7 +96,9 @@ html_page_top2( );
 		</td>
 		<td class="right">
 			<?php
-				if ( access_has_project_level( DEVELOPER ) ) {
+				$t_update_access = plugin_config_get( 'faq_update_threshold' );
+
+				if ( access_has_project_level( $t_update_access ) ) {
 					global $g_faq_add_page;
 					print_bracket_link( $g_faq_add_page, plugin_lang_get( 'add_faq' ) );
 				}
@@ -106,7 +109,7 @@ html_page_top2( );
 <ul>
 <?php
 	# Loop through results
-	if( $f_search == "" ){
+	if ( is_blank( $f_search ) ) {
 			$faq_count1=15;
 			if ($faq_count==0){
 				$faq_count1=0;
@@ -121,31 +124,35 @@ html_page_top2( );
 			for ( $i = 0; $i < $faq_count1; $i++ ) {
 				$row = db_fetch_array( $result );
 				extract( $row, EXTR_PREFIX_ALL, "v" );
-				if(( isset( $search_string )) or ( $pos === false )) {
+				if ( !is_blank( $f_search ) && $pos === false ) {
 					$v_question = eregi_replace ( $f_search, "<b>".$f_search."</b>", $v_question );
 					$v_answere 	= eregi_replace ( $f_search, "<b>".$f_search."</b>", $v_answere );
 				}
-				if( $f_search2 != "" ) {
+				if ( !is_blank( $f_search2 ) ) {
 					$v_question = eregi_replace ( $f_search2, "<b>".$f_search2."</b>", $v_question );
 					$v_answere  = eregi_replace ( $f_search2, "<b>".$f_search2."</b>", $v_answere );
 				}
-				if( $f_search3 != "" ) {
+				if ( !is_blank( $f_search3 ) ) {
 					$v_question = eregi_replace ( $f_search3, "<b>".$f_search3."</b>", $v_question );
 					$v_answere  = eregi_replace ( $f_search3, "<b>".$f_search3."</b>", $v_answere );
 				}
+
+				if ( strlen( $v_answere ) > 25 ) {
+					$v_answere = trim( utf8_substr( $v_answere, 0, 25 ) );
+					$v_answere .=".............";
+				}
+
 				$v_question = string_display( $v_question );
 				$v_answere  = string_display_links( $v_answere );
 				$v_date_posted = date( $g_complete_date_format, $v_date_posted );
 
-		# grab the username and email of the poster
+				# grab the username and email of the poster
 				$t_poster_name  = user_get_name($v_poster_id );
 				$t_poster_email = user_get_email($v_poster_id );
 
 				$t_project_name = "Sitewide";
 				if( $v_project_id != 0 )
 					$t_project_name = project_get_field( $v_project_id, "name" );
-				$v_answere = trim( utf8_substr( $v_answere, 0, 25 ) );
-				$v_answere .=".............";
 
 				if (ON == plugin_config_get( 'faq_view_window' ) ){
 					if( helper_get_current_project() == '0000000' ){

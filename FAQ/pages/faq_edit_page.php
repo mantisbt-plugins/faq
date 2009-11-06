@@ -49,7 +49,7 @@ $v_answere 	= string_textarea( $v_answere );
 				<?php echo plugin_lang_get( 'answere' ) ?>
 			</td>
 			<td>
-				<textarea name="answere" cols="80" rows="10" wrap="virtual"> <?php echo $v_answere ?></textarea>
+				<textarea name="answere" cols="80" rows="10" wrap="virtual"><?php echo $v_answere ?></textarea>
 			</td>
 		</tr>
 <?php if (ON == plugin_config_get( 'faq_view_check' ) ){ ?>

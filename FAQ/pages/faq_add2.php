@@ -36,7 +36,7 @@ $f_answere = string_display( $f_answere );
 </tr>
 <tr>
 	<td class="faq-body">
-		<?php echo $f_body ?>
+		<?php echo $f_answere ?>
 	</td>
 </tr>
 </table>

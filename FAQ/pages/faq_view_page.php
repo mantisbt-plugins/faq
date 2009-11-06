@@ -20,7 +20,7 @@ for ( $i = 0; $i < $faq_count; $i++ ) {
 	$row = db_fetch_array($result);
 	extract( $row, EXTR_PREFIX_ALL, "v" );
 
-	$v_headline = string_display( $v_headline );
+	$v_question = string_display( $v_question );
 	$v_answere = string_display_links( $v_answere );
 	$v_date_posted = date( $g_normal_date_format, $v_date_posted );
 

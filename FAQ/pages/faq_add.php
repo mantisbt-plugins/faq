@@ -14,12 +14,21 @@ $f_poster_id = auth_get_current_user_id( );
 
 $f_bug_id = gpc_get_int( 'id' );
 $t_bug_p = bug_get( $f_bug_id, true );
-$f_answere  = urlencode( $t_bug_p->description );
-$f_answere .= " ";
-$f_answere .= urlencode( $t_bug_p->additional_information );
-$f_question  = category_full_name( $t_bug_p->category_id );
-$f_question .= " -> ";
-$f_question .= urlencode( $t_bug_p->summary );
+$f_answere  = $t_bug_p->description;
+
+if ( !is_blank( $t_bug_p->additional_information ) ) {
+	$f_answere .= "\n\n";
+	$f_answere .= $t_bug_p->additional_information;
+}
+
+$t_category_name = category_full_name( $t_bug_p->category_id );
+$f_question  = '';
+
+if ( !is_blank( $t_category_name ) ) {
+	$f_question .= $t_category_name . ' -> ';
+}
+
+$f_question .= $t_bug_p->summary;
 
 if (ON == plugin_config_get( 'faq_view_check' ) ){
 	$f__view_level = gpc_get_string( 'faq_view_threshold' );
@@ -46,7 +55,7 @@ $f_answere = string_display( $f_answere );
 	</tr>
 	<tr>
 		<td class="faq-body">
-			<?php echo $f_body ?>
+			<?php echo $f_answere ?>
 		</td>
 	</tr>
 </table>

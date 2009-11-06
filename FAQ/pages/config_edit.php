@@ -1,11 +1,13 @@
 <?php
 auth_reauthenticate();
 access_ensure_global_level( config_get( 'manage_plugin_threshold' ) );
+
 $f_promote_text = gpc_get_int( 'promote_text', ON );
 $f_project_text = gpc_get_int( 'project_text', ON );
-$f_promote_threshold = gpc_get_string( 'promote_threshold',DEVELOPER);
+
+$f_promote_threshold = gpc_get_string( 'promote_threshold', plugin_config_get( 'faq_update_threshold' ) );
 $f_faq_view_check = gpc_get_int( 'faq_view_check', OFF );
-$f_faq_view_threshold = gpc_get_string( 'faq_view_threshold',VIEWER);
+$f_faq_view_threshold = gpc_get_string( 'faq_view_threshold', plugin_config_get( 'faq_view_threshold' ) );
 $f_faq_view_window = gpc_get_int( 'faq_view_window', OFF );
 
 plugin_config_set( 'promote_text', $f_promote_text );

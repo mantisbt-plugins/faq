@@ -9,16 +9,19 @@ if (OFF == plugin_config_get( 'faq_view_window' ) ){
 <p>
 <div align="center">
 <?php
-access_ensure_project_level( DEVELOPER );
+
+$t_update_access = plugin_config_get( 'faq_update_threshold' );
+$t_view_access = plugin_config_get( 'faq_view_threshold' );
+
+access_ensure_project_level( $t_update_access );
 
 # Update faq
 $f_question    = gpc_get_string( 'question' );
 $f_answere     = gpc_get_string( 'answere' );
 $f_project_id  = gpc_get_int( 'project_id' );
 $f_poster_id   = gpc_get_int( 'f_id' );
-$f_view_access = gpc_get_int( 'faq_view_threshold' );
 
-$result = faq_update_query( $f_poster_id, $f_question, $f_answere, $f_project_id, $f_view_access );
+$result = faq_update_query( $f_poster_id, $f_question, $f_answere, $f_project_id, $t_view_access );
 
 $f_question = string_display( $f_question );
 $f_answere  = string_display( $f_answere );
