@@ -18,6 +18,7 @@ if( $p_project_id != 0 ) {
 	}
 	$t_where_clausole .= ")";
 }
+$f_search = $_POST["f_search"];
 if( !isset( $f_search ) ) {
 	$f_search = "";
 	$f_search3 = "";
@@ -33,6 +34,7 @@ if( !isset( $f_search ) ) {
 	$what = " ";
 	$pos = strpos($f_search, $what);
 
+	$search_string = $_POST["search_string"];
 	if (($pos === false) or (isset( $search_string ))){
 		$t_where_clausole = $t_where_clausole . " ( (question LIKE '%".addslashes($f_search)."%')
 				OR (answere LIKE '%".addslashes($f_search)."%') ) ";
@@ -75,7 +77,7 @@ $faq_count = db_num_rows( $result );
 <tr>
 <td class="small-caption">
 <input type="text" size="25" name="f_search" value="<?php echo $f_search; ?>">
-<input  type="checkbox" name="search_string" > <?php echo plugin_lang_get( 'search_string' ) ?>
+<input  type="checkbox" name="search_string" id="search_string" > <label for="search_string"><?php echo plugin_lang_get( 'search_string' ) ?></label>
 </td>
 <td class="right">
    <input type="submit" name="f_filter" value="<?php echo lang_get( 'filter_button') ?>">

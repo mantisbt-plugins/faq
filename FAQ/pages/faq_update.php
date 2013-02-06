@@ -16,7 +16,10 @@ if (OFF == plugin_config_get('faq_view_window') ){
 	$f_answere	  = gpc_get_string( 'answere' );
 	$f_project_id = gpc_get_int( 'project_id' );
 	$f_poster_id  = gpc_get_int( 'f_id' );
-	$f_view_access = gpc_get_int( 'faq_view_threshold' );
+	if (plugin_config_get('faq_view_check') )
+		$f_view_access = gpc_get_int( 'faq_view_threshold' );
+	else
+		$f_view_access = 0;
 
     $result = faq_update_query( $f_poster_id, $f_question, $f_answere, $f_project_id,$f_view_access );
 
