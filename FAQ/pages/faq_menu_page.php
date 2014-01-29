@@ -60,7 +60,7 @@ if( $t_where_clausole != "" ){
 }
 
 $query = $query . " ORDER BY UPPER(question) ASC";
-$result = db_query( $query );
+$result = db_query_bound( $query );
 $faq_count = db_num_rows( $result );
 ?>
 <p>

@@ -14,7 +14,7 @@ $f_id = gpc_get_int( 'f_id' );
 	$query = "SELECT *, UNIX_TIMESTAMP(date_posted) as date_posted
 			FROM $g_mantis_faq_table
 			WHERE  id='$f_id'";
-	$result = db_query( $query );
+	$result = db_query_bound( $query );
     $faq_count = db_num_rows( $result );
 
     # Loop through results

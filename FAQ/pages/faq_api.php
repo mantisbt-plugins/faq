@@ -40,7 +40,7 @@
 	    		( id, project_id, poster_id, date_posted, last_modified, question, answere, view_access )
 				VALUES
 				( null, '$p_project_id', '$p_poster_id', NOW(), NOW(), '$p_question', '$p_answere', '$p_view_level' )";
-	    return db_query( $query );
+	    return db_query_bound( $query );
 	}
 	# --------------------
 	# Delete the faq entry
@@ -50,7 +50,7 @@
 		$query = "DELETE
 				FROM $g_mantis_faq_table
 	    		WHERE id='$p_id'";
-	    return db_query( $query );
+	    return db_query_bound( $query );
 	}
 	# --------------------
 	# Update faq item
@@ -66,7 +66,7 @@
 				SET question='$p_question', answere='$p_answere',
 					project_id='$p_project_id', view_access='$p_view_level', last_modified=NOW()
 	    		WHERE id='$p_id'";
-	    return db_query( $query );
+	    return db_query_bound( $query );
 	}
 	# --------------------
 	# Selects the faq item associated with the specified id
@@ -76,7 +76,7 @@
 		$query = "SELECT *
 			FROM $g_mantis_faq_table
 			WHERE id='$p_id'";
-	    $result = db_query( $query );
+	    $result = db_query_bound( $query );
 		return db_fetch_array( $result );
 	}
 	# --------------------
@@ -87,6 +87,6 @@
 		$query = "SELECT COUNT(*)
 				FROM $g_mantis_faq_table
 				WHERE project_id='$p_project_id' OR project_id='0000000'";
-		$result = db_query( $query );
+		$result = db_query_bound( $query );
 	    return db_result( $result, 0, 0 );
 	}
