@@ -1,10 +1,10 @@
 # Mantis plugin FAQ 2.02
 
-**Author**: Cas Nuy 
-**Based upon**: FAQ by pbia-at-engineering.com 
-**Website**: <http://www.nuy.info> 
-**Mail**:  Cas-at-Nuy.info 
-**Copyright**: GPL
+**Author**: Cas Nuy \
+**Based upon**: FAQ by pbia-at-engineering.com \
+**Website**: <http://www.nuy.info> \\
+**Mail**:  Cas-at-Nuy.info \
+**Copyright**: GPL\
 
 ## Description
 
