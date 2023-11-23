@@ -1,0 +1,25 @@
+<?php
+$s_menu_faq_link = "FAQ";
+$s_plugin_FAQ_add_faq = "Neue FAQ hinzufügen";
+$s_plugin_FAQ_add_faq_title = "Neue FAQ";
+$s_plugin_FAQ_post_faq_button = "FAQ veröffentlichen";
+$s_plugin_FAQ_question = "Frage";
+$s_plugin_FAQ_answere = "Antwort";
+$s_plugin_FAQ_delete_faq_sure_msg = "Soll diese FAQ wirklich gelöscht werden? ";
+$s_plugin_FAQ_delete_faq_item_button = "Lösche FAQ";
+$s_plugin_FAQ_edit_faq_title = "Bearbeite FAQ";
+$s_plugin_FAQ_update_faq_button = "Aktualisiere FAQ";
+$s_plugin_FAQ_import_faq = "In FAQ veröffentlichen";
+$s_plugin_FAQ_search_string = "Den gesamten Text durchsuchen";
+$s_plugin_FAQ_close_window = "Fenster schließen";
+// config section
+$s_plugin_FAQ_plugin_format_title = "Mantis FAQ";
+$s_plugin_FAQ_plugin_format_config = "Konfiguration";
+$s_plugin_FAQ_plugin_format_promote_text = "Probleme können in FAQ veröffentlicht werden";
+$s_plugin_FAQ_plugin_format_project_text = "FAQ projektspezifisch abspeichern";
+$s_plugin_FAQ_plugin_format_threshold_text = "Minimale Zugangsberechtigung um FAQ zu erstellen";
+$s_plugin_FAQ_faq_view_check = "FAQ bearbeiten, bevor FAQ aus einem Problem erzeugt wird";
+$s_plugin_FAQ_faq_view_threshold = "Minimale Zugangsberechtigung um FAQ anzusehen";
+$s_plugin_FAQ_faq_view_window = "FAQs in neuem Fenster öffnen";
+$s_plugin_FAQ_plugin_format_enabled = "An";
+$s_plugin_FAQ_plugin_format_disabled = "Aus";
