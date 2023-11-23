@@ -1,0 +1,3 @@
+Version: 2.1.1 #
+Devurl: https://github.com/mantisbt-plugins/Defcon/blob/main/version.txt #
+Location: https://github.com/mantisbt-plugins/Defcon/archive/refs/heads/main.zip #
