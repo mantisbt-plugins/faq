@@ -4,7 +4,7 @@
 **Based upon**: FAQ by pbia-at-engineering.com \
 **Website**: <http://www.nuy.info> \\
 **Mail**:  Cas-at-Nuy.info \
-**Copyright**: GPL\
+**Copyright**: GPL
 
 ## Description
 
