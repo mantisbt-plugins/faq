@@ -30,10 +30,6 @@
 	function faq_add_query( $p_project_id, $p_poster_id, $p_question, $p_answere ,$p_view_level= 10) {
 		global $g_mantis_faq_table;
 
-		# " character poses problem when editting so let's just convert them
-//		$p_question	= db_prepare_string( $p_question );
-//		$p_answere	= db_prepare_string( $p_answere );
-
 		# Add item
 		$query = "INSERT
 				INTO $g_mantis_faq_table
@@ -56,10 +52,6 @@
 	# Update faq item
 	function faq_update_query( $p_id, $p_question, $p_answere, $p_project_id ,$p_view_level) {
 		global $g_mantis_faq_table;
-
-		# " character poses problem when editting so let's just convert them to '
-//		$p_question	= db_prepare_string( $p_question );
-//		$p_answere		= db_prepare_string( $p_answere );
 
 		# Update entry
 		$query = "UPDATE $g_mantis_faq_table
