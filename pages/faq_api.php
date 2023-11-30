@@ -31,8 +31,8 @@
 		global $g_mantis_faq_table;
 
 		# " character poses problem when editting so let's just convert them
-		$p_question	= db_prepare_string( $p_question );
-		$p_answere	= db_prepare_string( $p_answere );
+//		$p_question	= db_prepare_string( $p_question );
+//		$p_answere	= db_prepare_string( $p_answere );
 
 		# Add item
 		$query = "INSERT
@@ -58,8 +58,8 @@
 		global $g_mantis_faq_table;
 
 		# " character poses problem when editting so let's just convert them to '
-		$p_question	= db_prepare_string( $p_question );
-		$p_answere		= db_prepare_string( $p_answere );
+//		$p_question	= db_prepare_string( $p_question );
+//		$p_answere		= db_prepare_string( $p_answere );
 
 		# Update entry
 		$query = "UPDATE $g_mantis_faq_table
