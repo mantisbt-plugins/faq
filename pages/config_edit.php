@@ -16,4 +16,4 @@ plugin_config_set( 'promote_threshold', $f_promote_threshold );
 plugin_config_set( 'faq_view_check', $f_faq_view_check );
 plugin_config_set( 'faq_view_threshold', $f_faq_view_threshold );
 
-print_successful_redirect( plugin_page( 'config',TRUE ) );
+print_header_redirect( plugin_page( 'config',TRUE ) );
