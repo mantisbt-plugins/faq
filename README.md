@@ -62,13 +62,13 @@ View threshold  is Viewer
 
 ## Change log
 
-0.91 Initial release
-0.92 Added automatic creation of table
- Included All project-FAQ with project-specific FAQ
- Added option to open FAQ in new window
- Added option to set access level on FAQ
-0.95 Used the default EVENT_MENU_ISSUE
-1.01 Final release for Mantis 1,x
-2.01 Intial version for Mantis 2.x
-2.02 Bugfixes for version 2.01
-2.03 Removed in full db_prepare_string
+0.91 Initial release<br>
+0.92 Added automatic creation of table<br>
+ Included All project-FAQ with project-specific FAQ<br>
+ Added option to open FAQ in new window<br>
+ Added option to set access level on FAQ<br>
+0.95 Used the default EVENT_MENU_ISSUE<br>
+1.01 Final release for Mantis 1.x<br>
+2.01 Intial version for Mantis 2.x<br>
+2.02 Bugfixes for version 2.01<br>
+2.03 Removed in full db_prepare_string<br>
