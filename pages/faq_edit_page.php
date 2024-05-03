@@ -5,14 +5,14 @@ layout_page_begin();
 access_ensure_project_level( DEVELOPER );
 
 $f_id = gpc_get_int( 'f_id' );
-	# Retrieve faq item data and prefix with v_
-	$row = faq_select_query( $f_id );
-	if ( $row ) {
-    	extract( $row, EXTR_PREFIX_ALL, "v" );
-    }
+# Retrieve faq item data and prefix with v_
+$row = faq_select_query( $f_id );
+if ( $row ) {
+   	extract( $row, EXTR_PREFIX_ALL, "v" );
+}
+$v_question = string_attribute( $v_question );
+$v_answere 	= string_textarea( $v_answere );
 
-   	$v_question = string_attribute( $v_question );
-   	$v_answere 	= string_textarea( $v_answere );
 ?>
 
 <?php # Edit faq Form BEGIN ?>
@@ -25,7 +25,7 @@ $f_id = gpc_get_int( 'f_id' );
 <div class="widget-header widget-header-small">
 	<h4 class="widget-title lighter">
 		<i class="ace-icon fa fa-text-width"></i>
-		<?php echo  plugin_lang_get( 'plugin_format_title' ) . ': ' . lang_get( 'plugin_format_config' )?>
+		<?php echo  plugin_lang_get( 'plugin_format_title' ) . ': ' . plugin_lang_get( 'plugin_format_config' )?>
 	</h4>
 </div>
 <div class="widget-body">

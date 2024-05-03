@@ -18,8 +18,10 @@ layout_page_begin();
 
     $result = faq_update_query( $f_poster_id, $f_question, $f_answere, $f_project_id,$f_view_access );
 
+
     $f_question 	= string_display( $f_question );
     $f_answere 		= string_display( $f_answere );
+
 
 	if ( $result ) {				# SUCCESS
 		PRINT lang_get( 'operation_successful' ) . '<p>';
