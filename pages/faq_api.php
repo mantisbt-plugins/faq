@@ -1,6 +1,4 @@
 <?php
-	$g_mantis_faq_table              = plugin_table('results');
-
 	#----------------------------------
 	# faq page definitions
 
@@ -28,45 +26,55 @@
 
 	# --------------------
 	function faq_add_query( $p_project_id, $p_poster_id, $p_question, $p_answere ,$p_view_level= 10) {
-		global $g_mantis_faq_table;
 
 		# Add item
-		$query = "INSERT
-				INTO $g_mantis_faq_table
+	/*	$query = "INSERT
+				INTO {plugin_FAQ_results}
 	    		( id, project_id, poster_id, date_posted, last_modified, question, answere, view_access )
 				VALUES
 				( null, '$p_project_id', '$p_poster_id', NOW(), NOW(), '$p_question', '$p_answere', '$p_view_level' )";
 	    return db_query( $query );
+	*/
+	
+				$t_query = 'insert into {plugin_FAQ_results} ( project_id, poster_id, date_posted, last_modified, question, answere, view_access ) values (' 
+				. db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ' )';
+				$now =  date("Y/m/d") ;
+				return db_query( $t_query, array($p_project_id, $p_poster_id , $now , $now,$p_question,$p_answere,$p_view_level) );
+		
 	}
 	# --------------------
 	# Delete the faq entry
 	function faq_delete_query( $p_id ) {
-		global $g_mantis_faq_table;
+
 
 		$query = "DELETE
-				FROM $g_mantis_faq_table
+				FROM {plugin_FAQ_results}
 	    		WHERE id='$p_id'";
 	    return db_query( $query );
 	}
 	# --------------------
 	# Update faq item
 	function faq_update_query( $p_id, $p_question, $p_answere, $p_project_id ,$p_view_level) {
-		global $g_mantis_faq_table;
+
 
 		# Update entry
-		$query = "UPDATE $g_mantis_faq_table
+	/*	$query = "UPDATE $g_mantis_faq_table
 				SET question='$p_question', answere='$p_answere',
 					project_id='$p_project_id', view_access='$p_view_level', last_modified=NOW()
 	    		WHERE id='$p_id'";
 	    return db_query( $query );
+	*/	
+		$t_query = 'update {plugin_FAQ_results} set question =  ' . db_param() . ', answere = '  . db_param() . ' , project_id = '   . db_param() . ' , view_access = '  . db_param() . ' , last_modified = '  . db_param() . ' where id =  ' . db_param() . '';
+		$now =  date("Y/m/d") ;
+				return db_query( $t_query, array($p_question,$p_answere,$p_project_id,$p_view_level,$now ,$p_id) );
 	}
 	# --------------------
 	# Selects the faq item associated with the specified id
 	function faq_select_query( $p_id ) {
-		global $g_mantis_faq_table;
+
 
 		$query = "SELECT *
-			FROM $g_mantis_faq_table
+			FROM {plugin_FAQ_results}
 			WHERE id='$p_id'";
 	    $result = db_query( $query );
 		return db_fetch_array( $result );
@@ -74,10 +82,9 @@
 	# --------------------
 	# get faq count (selected project plus sitewide posts)
 	function faq_count_query( $p_project_id ) {
-		global $g_mantis_faq_table;
 
 		$query = "SELECT COUNT(*)
-				FROM $g_mantis_faq_table
+				FROM {plugin_FAQ_results}
 				WHERE project_id='$p_project_id' OR project_id='0000000'";
 		$result = db_query( $query );
 	    return db_result( $result, 0, 0 );

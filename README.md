@@ -1,4 +1,4 @@
-# Mantis plugin FAQ 2.03
+# Mantis plugin FAQ 2.05
 
 **Author**: Cas Nuy \
 **Based upon**: FAQ by pbia-at-engineering.com \
@@ -72,3 +72,4 @@ View threshold  is Viewer
 2.01 Intial version for Mantis 2.x<br>
 2.02 Bugfixes for version 2.01<br>
 2.03 Removed in full db_prepare_string<br>
+2.05 Removed issue with curly brackes<br>

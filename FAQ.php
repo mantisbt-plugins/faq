@@ -4,7 +4,7 @@ class FAQPlugin extends MantisPlugin {
 	function register() {
 		$this->name        = 'FAQ';
 		$this->description = 'Adds Frequently Asked Questions to your Mantis installation.';
-		$this->version     = '2.04';
+		$this->version     = '2.05';
 		$this->requires    = array('MantisCore'       => '2.0.0',);
 		$this->author      = 'Cas Nuy / based upon scripts from pbia@engineer.com';
 		$this->contact     = 'Cas-at-nuy.info';

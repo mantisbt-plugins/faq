@@ -54,7 +54,7 @@ if( $f_search == "") {
 	}
 }
 	
-$query = "SELECT id, poster_id, project_id, UNIX_TIMESTAMP(date_posted) as date_posted, question, answere FROM $g_mantis_faq_table";
+$query = "SELECT id, poster_id, project_id, UNIX_TIMESTAMP(date_posted) as date_posted, question, answere FROM {plugin_FAQ_results}";
 if( $t_where_clause != "" ){
     $query = $query . " WHERE $t_where_clause";
 }

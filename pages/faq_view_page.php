@@ -9,7 +9,7 @@ $f_id = gpc_get_int( 'f_id' );
 
 	# Select the faq posts
 	$query = "SELECT *, UNIX_TIMESTAMP(date_posted) as date_posted
-			FROM $g_mantis_faq_table
+			FROM {plugin_FAQ_results}
 			WHERE  id='$f_id'";
 	$result = db_query( $query );
     $faq_count = db_num_rows( $result );

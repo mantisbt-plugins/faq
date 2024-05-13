@@ -41,7 +41,8 @@ layout_page_begin();
 <p>
 <?php
 	} else {						# FAILURE
-	print_sql_error( $query );
+		PRINT lang_get( 'operation_failed' ) . '<p>';
+
 	}
 
 print_bracket_link( $g_faq_menu_page, lang_get( 'proceed' ) );
