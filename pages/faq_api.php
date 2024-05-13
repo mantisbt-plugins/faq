@@ -26,7 +26,7 @@
 
 	# --------------------
 	function faq_add_query( $p_project_id, $p_poster_id, $p_question, $p_answere ,$p_view_level= 10) {
-0		$t_query = 'insert into {plugin_FAQ_results} ( project_id, poster_id, date_posted, last_modified, question, answere, view_access ) values (' 
+		$t_query = 'insert into {plugin_FAQ_results} ( project_id, poster_id, date_posted, last_modified, question, answere, view_access ) values (' 
 				. db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ' )';
 		$now =  date("Y/m/d") ;
 		return db_query( $t_query, array($p_project_id, $p_poster_id , $now , $now,$p_question,$p_answere,$p_view_level) );
