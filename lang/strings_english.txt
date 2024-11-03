@@ -14,7 +14,7 @@ $s_plugin_FAQ_search_string = "Search whole string";
 $s_plugin_FAQ_close_window = "Close Window";
 // config section
 $s_plugin_FAQ_plugin_format_title = "Mantis FAQ";
-$s_plugin_FAQ_plugin_format_config = "Configuration";
+$s_plugin_FAQ_config = "Configuration";
 $s_plugin_FAQ_plugin_format_promote_text = "Issues can be promoted to FAQ's";
 $s_plugin_FAQ_plugin_format_project_text = "Save FAQ by project";
 $s_plugin_FAQ_plugin_format_threshold_text = "Minimum treshold to create FAQ";

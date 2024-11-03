@@ -14,7 +14,7 @@ $s_plugin_FAQ_search_string = "Den gesamten Text durchsuchen";
 $s_plugin_FAQ_close_window = "Fenster schließen";
 // config section
 $s_plugin_FAQ_plugin_format_title = "Mantis FAQ";
-$s_plugin_FAQ_plugin_format_config = "Konfiguration";
+$s_plugin_FAQ_config = "Konfiguration";
 $s_plugin_FAQ_plugin_format_promote_text = "Probleme können in FAQ veröffentlicht werden";
 $s_plugin_FAQ_plugin_format_project_text = "FAQ projektspezifisch abspeichern";
 $s_plugin_FAQ_plugin_format_threshold_text = "Minimale Zugangsberechtigung um FAQ zu erstellen";

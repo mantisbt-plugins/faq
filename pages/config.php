@@ -15,7 +15,7 @@ print_manage_menu();
 <div class="widget-header widget-header-small">
 	<h4 class="widget-title lighter">
 		<i class="ace-icon fa fa-text-width"></i>
-		<?php echo  plugin_lang_get( 'plugin_format_title' ) . ': ' . lang_get( 'plugin_format_config' )?>
+		<?php echo  plugin_lang_get( 'plugin_format_title' ) . ': ' . plugin_lang_get( 'config' )?>
 	</h4>
 </div>
 <div class="widget-body">
@@ -24,7 +24,7 @@ print_manage_menu();
 <table class="table table-bordered table-condensed table-striped">
 <tr>
 	<td class="form-title" colspan="3">
-		<?php echo plugin_lang_get( 'plugin_format_title' ) . ': ' . plugin_lang_get( 'plugin_format_config' ) ?>
+		<?php echo plugin_lang_get( 'plugin_format_title' ) . ': ' . plugin_lang_get( 'config' ) ?>
 	</td>
 </tr>
 <tr>
